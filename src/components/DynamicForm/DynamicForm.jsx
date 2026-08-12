@@ -3,6 +3,10 @@ import { useState, useEffect, useCallback } from "react";
 import { uploadFile } from "../../services/api/uploadService";
 import "./DynamicForm.css";
 
+// Dérive l'URL de base du serveur (sans le /api) à partir de VITE_API_URL
+const API_URL = import.meta.env.VITE_API_URL; // ex: https://fdl-backend-ylx7.onrender.com/api
+const BASE_URL = API_URL.replace(/\/api\/?$/, ""); // -> https://fdl-backend-ylx7.onrender.com
+
 function DynamicForm({ fields, initialValues = {}, onSubmit, loading = false, submitLabel = "Enregistrer" }) {
     const [values, setValues] = useState(() => {
         const defaults = {};
@@ -188,7 +192,8 @@ function DynamicForm({ fields, initialValues = {}, onSubmit, loading = false, su
             case "file": {
                 const isUploading = uploadingFields[field.name];
                 const currentUrl = values[field.name];
-                const previewUrl = currentUrl ? `http://localhost:8080${currentUrl}` : null;
+                // const previewUrl = currentUrl ? `http://localhost:8080${currentUrl}` : null;
+                const previewUrl = currentUrl ? `${BASE_URL}${currentUrl}` : null;
 
                 return (
                     <div className="dynamic-form__file">
