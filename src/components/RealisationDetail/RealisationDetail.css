@@ -1,0 +1,104 @@
+.realisation-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.realisation-detail__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--surface-secondary);
+}
+
+.realisation-detail__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.realisation-detail__badge {
+    position: absolute;
+    top: 0.9rem;
+    left: 0.9rem;
+    padding: 0.35rem 0.8rem;
+    font-family: "Proxima-SemiBold", sans-serif;
+    font-size: 0.78rem;
+    font-weight: var(--font-semibold);
+    color: var(--white);
+    background-color: var(--primary);
+    border-radius: 20px;
+}
+
+.realisation-detail__title {
+    font-family: "Proxima-ExtraBold", sans-serif;
+    font-size: var(--font-size-subtitle);
+    font-weight: var(--font-black);
+    color: var(--text);
+    margin: 0;
+}
+
+.realisation-detail__summary {
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: var(--font-size-body);
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.realisation-detail__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--surface-secondary);
+    border-radius: 10px;
+}
+
+.realisation-detail__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.realisation-detail__label {
+    font-family: "Proxima-SemiBold", sans-serif;
+    font-size: 0.75rem;
+    font-weight: var(--font-semibold);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.realisation-detail__value {
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: 0.92rem;
+    color: var(--text);
+}
+
+.realisation-detail__description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.realisation-detail__description p {
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: var(--font-size-body);
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .realisation-detail__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .realisation-detail__image-wrapper {
+        height: 200px;
+    }
+}

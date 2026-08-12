@@ -1,0 +1,9 @@
+@import "./styles/reset.css";
+@import "./styles/variables.css";
+@import "./styles/typography.css";
+@import "./styles/FormPage.css";
+
+.container{
+    width:min(80%, 1400px);
+    margin:0 auto;
+}

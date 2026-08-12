@@ -1,0 +1,35 @@
+html,
+body{
+    background:var(--background);
+    color:var(--text);
+    transition:
+        background-color .3s ease,
+        color .3s ease;
+}
+
+body{
+    margin:0;
+}
+
+main{
+    min-height:100vh;
+    background:var(--background);
+}
+
+
+.app-layout {
+    display: flex;
+}
+
+.app-content {
+    margin-left: 260px; /* largeur de la navbar */
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+@media (max-width: 900px) {
+    .app-content {
+        margin-left: 220px;
+    }
+}

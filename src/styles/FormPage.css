@@ -1,0 +1,45 @@
+.form-page {
+    display: flex;
+    flex-direction: column;
+    max-width: 560px;
+}
+
+.form-page__title {
+    font-family: "Proxima-ExtraBold", sans-serif;
+    font-size: var(--font-size-subtitle);
+    font-weight: var(--font-black);
+    color: var(--text);
+    margin: 0 0 1.5rem 0;
+}
+
+.form-page__error {
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: 0.875rem;
+    color: #DC2626;
+    background-color: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 1.25rem;
+}
+
+
+.form-page__cancel {
+    margin-top: 0.75rem;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: var(--font-size-btn);
+    color: var(--white);
+    background: red;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* form-page__cancel */
+
+.form-page__cancel:hover {
+    background-color: var(--surface-secondary);
+    color: var(--text);
+}

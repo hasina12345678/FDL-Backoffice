@@ -1,0 +1,263 @@
+.login-page {
+    --lamp-shade: var(--surface);
+    --lamp-shade-on: var(--white);
+    --lamp-base: var(--surface-secondary);
+    --glow-color: rgba(78, 166, 142, 0.25);
+    --accent-color: var(--primary);
+    --on: 0;
+    --lamp-transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background: #121417;
+    overflow: hidden;
+    transition: background var(--lamp-transition);
+}
+
+.login-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 40%, var(--glow-color), transparent 70%);
+    opacity: var(--on);
+    transition: opacity var(--lamp-transition);
+    pointer-events: none;
+}
+
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8vmin;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+    padding: 1.5rem;
+    z-index: 1;
+}
+
+/* ---------- Lampe ---------- */
+
+.lamp-wrapper {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.lamp-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.lamp-shade {
+    fill: var(--lamp-shade);
+    transition: fill var(--lamp-transition);
+}
+
+.login-page[data-on="true"] .lamp-shade {
+    fill: var(--lamp-shade-on);
+    filter: drop-shadow(0 0 30px rgba(78, 166, 142, 0.35));
+}
+
+.lamp-base {
+    fill: var(--lamp-base);
+}
+
+.inner-glow {
+    fill: var(--primary);
+    opacity: 0;
+    filter: blur(15px);
+    transition: opacity var(--lamp-transition);
+}
+
+.login-page[data-on="true"] .inner-glow {
+    opacity: 0.5;
+}
+
+.cord-line {
+    stroke: var(--text-light);
+    stroke-width: 2;
+}
+
+.cord-bead {
+    fill: var(--accent-color);
+}
+
+.cord-hit {
+    cursor: pointer;
+}
+
+/* ---------- Formulaire ---------- */
+
+.login-form {
+    width: 340px;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(30px);
+
+    transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.login-form.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.login-form__logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.login-form__logo img {
+    width: 100%;
+    max-width: 110px;
+    height: auto;
+    object-fit: contain;
+}
+
+.login-form h2 {
+    font-family: "Proxima-ExtraBold", sans-serif;
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: var(--font-black);
+    font-size: var(--font-size-subtitle);
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: "Proxima-SemiBold", sans-serif;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    margin-left: 2px;
+    font-size: var(--font-size-body);
+    font-weight: var(--font-semibold);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: var(--font-size-body);
+    color: var(--text);
+    background-color: var(--surface-secondary);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--text-light);
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(78, 166, 142, 0.15);
+}
+
+/* ---------- Champ mot de passe (avec œil) ---------- */
+
+.login-form__password {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.login-form__password input {
+    padding-right: 2.75rem;
+}
+
+.login-form__eye {
+    position: absolute;
+    right: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.login-form__eye:hover {
+    color: var(--primary);
+}
+
+/* ---------- Erreur ---------- */
+
+.login-form__error {
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: 0.875rem;
+    color: #DC2626;
+    background-color: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    margin: -0.4rem 0 1rem 0;
+}
+
+/* ---------- Bouton ---------- */
+
+.login-btn {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Proxima-SemiBold", sans-serif;
+    font-size: var(--font-size-btn);
+    font-weight: var(--font-semibold);
+    color: var(--white);
+    background-color: var(--primary);
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.login-btn:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+    transform: scale(1.01);
+}
+
+.login-btn:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.login-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 480px) {
+    .login-form {
+        width: 100%;
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+    }
+
+    .login-form__logo img {
+        max-width: 90px;
+    }
+}

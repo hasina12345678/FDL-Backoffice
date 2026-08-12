@@ -1,0 +1,27 @@
+.logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: "Proxima-SemiBold", sans-serif;
+    font-size: var(--font-size-navbar-link);
+    font-weight: var(--font-semibold);
+    color: #DC2626;
+    background-color: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.logout-btn:hover {
+    background-color: #DC2626;
+    color: var(--white);
+    border-color: #DC2626;
+}
+
+.logout-btn svg {
+    flex-shrink: 0;
+}

@@ -1,0 +1,23 @@
+@font-face{
+    font-family:"Proxima-Light";
+    src:url("../assets/fonts/PROXIMA NOVA LIGHT.TTF") format("truetype");
+}
+
+@font-face{
+    font-family:"Proxima-Regular";
+    src:url("../assets/fonts/PROXIMA NOVA REGULAR.TTF") format("truetype");
+}
+
+@font-face{
+    font-family:"Proxima-SemiBold";
+    src:url("../assets/fonts/PROXIMA NOVA SEMIBOLD.TTF") format("truetype");
+}
+
+@font-face{
+    font-family:"Proxima-ExtraBold";
+    src:url("../assets/fonts/PROXIMA NOVA EXTRABOLD.TTF") format("truetype");
+}
+
+body{
+    font-family:"Proxima-Regular",sans-serif;
+}

@@ -1,0 +1,156 @@
+.realisation-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.realisation-page__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.realisation-page__header h1 {
+    font-family: "Proxima-ExtraBold", sans-serif;
+    font-size: var(--font-size-subtitle);
+    color: var(--text);
+    margin: 0;
+}
+
+.realisation-page__add-btn {
+    padding: 0.7rem 1.25rem;
+    font-family: "Proxima-SemiBold", sans-serif;
+    font-size: var(--font-size-btn);
+    color: var(--white);
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.realisation-page__add-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.realisation-page__empty {
+    font-family: "Proxima-Regular", sans-serif;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.realisation-page__loading-edit {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ---------- Filtres ---------- */
+
+.realisation-filters {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.25rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.realisation-filters__group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 160px;
+    flex: 1;
+}
+
+.realisation-filters__group label {
+    font-family: "Proxima-SemiBold", sans-serif;
+    font-size: 0.8rem;
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+}
+
+.realisation-filters__group input,
+.realisation-filters__group select {
+    padding: 0.6rem 0.75rem;
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background-color: var(--surface-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.realisation-filters__group input:focus,
+.realisation-filters__group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(78, 166, 142, 0.15);
+}
+
+.realisation-filters__reset {
+    padding: 0.6rem 1.1rem;
+    font-family: "Proxima-SemiBold", sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background-color: var(--surface-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.realisation-filters__reset:hover {
+    background-color: var(--dropdown-hover);
+    color: var(--primary);
+}
+
+/* ---------- Grille de cards ---------- */
+
+.realisation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+
+
+
+.realisation-detail__modal-actions {
+    margin-top: 1.5rem;
+}
+
+.realisation-detail__modal-actions .form-page__cancel {
+    width: 100%;
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.realisation-detail__modal-actions .form-page__cancel:hover {
+    background-color: var(--dropdown-hover);
+}
+
+
+
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 700px) {
+    .realisation-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .realisation-filters__group {
+        min-width: 100%;
+    }
+
+    .realisation-filters__reset {
+        width: 100%;
+    }
+}
