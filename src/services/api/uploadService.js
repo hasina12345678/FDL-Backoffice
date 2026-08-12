@@ -1,6 +1,5 @@
 // services/api/uploadService.js
 import { getAuthHeaders } from "./genericService";
-
 const UPLOAD_URL = `${import.meta.env.VITE_API_URL}/upload`;
 
 export async function uploadFile(file) {
