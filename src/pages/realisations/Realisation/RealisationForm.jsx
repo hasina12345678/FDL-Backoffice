@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import DynamicForm from "../../../components/DynamicForm/DynamicForm";
 import createCrudService from "../../../services/api/genericService";
+import { API_URL } from "../../../services/api/config";
 
 const realisationService = createCrudService("realisations");
 
@@ -18,7 +19,7 @@ const realisationFields = [
         required: true,
         placeholder: "Sélectionner une région...",
         optionsSource: {
-            url: "http://localhost:8080/api/regions",
+            url: `${API_URL}/regions`,
             valueKey: "id",
             labelKey: "name",
         },
@@ -32,7 +33,7 @@ const realisationFields = [
         dependsOnMessage: "Sélectionnez d'abord une région",
         optionsSource: {
             dependsOn: "regionId",
-            url: (values) => `http://localhost:8080/api/regions/${values.regionId}/districts`,
+            url: (values) => `${API_URL}/regions/${values.regionId}/districts`,
             valueKey: "id",
             labelKey: "name",
         },
@@ -46,7 +47,7 @@ const realisationFields = [
         dependsOnMessage: "Sélectionnez d'abord un district",
         optionsSource: {
             dependsOn: "districtId",
-            url: (values) => `http://localhost:8080/api/districts/${values.districtId}/communes`,
+            url: (values) => `${API_URL}/districts/${values.districtId}/communes`,
             valueKey: "id",
             labelKey: "name",
         },
@@ -58,7 +59,7 @@ const realisationFields = [
         type: "select",
         placeholder: "Sélectionner une catégorie...",
         optionsSource: {
-            url: "http://localhost:8080/api/categories-realisations",
+            url: `${API_URL}/categories-realisations`,
             valueKey: "id",
             labelKey: "name",
         },
@@ -69,7 +70,7 @@ const realisationFields = [
         type: "select",
         placeholder: "Sélectionner un programme...",
         optionsSource: {
-            url: "http://localhost:8080/api/programmes",
+            url: `${API_URL}/programmes`,
             valueKey: "id",
             labelKey: "name",
         },
@@ -80,7 +81,7 @@ const realisationFields = [
         type: "select",
         placeholder: "Sélectionner une source...",
         optionsSource: {
-            url: "http://localhost:8080/api/sources-financement",
+            url: `${API_URL}/sources-financement`,
             valueKey: "id",
             labelKey: "name",
         },

@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import DynamicForm from "../../../components/DynamicForm/DynamicForm";
 import createCrudService from "../../../services/api/genericService";
+import { API_URL } from "../../../services/api/config";
 
 const districtService = createCrudService("districts");
 
@@ -16,7 +17,7 @@ const districtFields = [
         required: true,
         placeholder: "Sélectionner une région...",
         optionsSource: {
-            url: "http://localhost:8080/api/regions",
+            url: `${API_URL}/regions`,
             valueKey: "id",
             labelKey: "name",
         },

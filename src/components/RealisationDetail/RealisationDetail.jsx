@@ -1,5 +1,6 @@
 // components/RealisationDetail/RealisationDetail.jsx
 import "./RealisationDetail.css";
+import { BASE_URL } from "../../services/api/config";
 
 const PLACEHOLDER_IMG = "https://via.placeholder.com/700x400?text=Pas+de+photo";
 
@@ -19,7 +20,7 @@ function formatDate(dateStr) {
 
 function RealisationDetail({ realisation }) {
     const imageUrl = realisation.photo
-        ? `http://localhost:8080${realisation.photo}`
+        ? `${BASE_URL}${realisation.photo}`
         : PLACEHOLDER_IMG;
 
     return (

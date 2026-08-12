@@ -1,5 +1,6 @@
 // components/RealisationCard/RealisationCard.jsx
 import "./RealisationCard.css";
+import { BASE_URL } from "../../services/api/config";
 
 const PLACEHOLDER_IMG = `data:image/svg+xml,${encodeURIComponent(`
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="260" viewBox="0 0 400 260">
@@ -14,7 +15,7 @@ const PLACEHOLDER_IMG = `data:image/svg+xml,${encodeURIComponent(`
 `)}`;
 function RealisationCard({ realisation, onView, onEdit, onDelete }) {
     const imageUrl = realisation.photo
-        ? `http://localhost:8080${realisation.photo}`
+        ? `${BASE_URL}${realisation.photo}`
         : PLACEHOLDER_IMG;
 
     const handleEditClick = (e) => {

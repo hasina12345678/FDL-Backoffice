@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import DynamicForm from "../../../components/DynamicForm/DynamicForm";
 import createCrudService from "../../../services/api/genericService";
+import { API_URL } from "../../../services/api/config";
 
 const communeService = createCrudService("communes");
 
@@ -15,7 +16,7 @@ const communeFields = [
         required: true,
         placeholder: "Sélectionner une région...",
         optionsSource: {
-            url: "http://localhost:8080/api/regions",
+            url: `${API_URL}/regions`,
             valueKey: "id",
             labelKey: "name",
         },
@@ -29,7 +30,7 @@ const communeFields = [
         dependsOnMessage: "Sélectionnez d'abord une région",
         optionsSource: {
             dependsOn: "regionId",
-            url: (values) => `http://localhost:8080/api/regions/${values.regionId}/districts`,
+            url: (values) => `${API_URL}/regions/${values.regionId}/districts`,
             valueKey: "id",
             labelKey: "name",
         },
