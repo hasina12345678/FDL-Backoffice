@@ -193,7 +193,12 @@ function DynamicForm({ fields, initialValues = {}, onSubmit, loading = false, su
                 const isUploading = uploadingFields[field.name];
                 const currentUrl = values[field.name];
                 // const previewUrl = currentUrl ? `http://localhost:8080${currentUrl}` : null;
-                const previewUrl = currentUrl ? `${BASE_URL}${currentUrl}` : null;
+                // const previewUrl = currentUrl ? `${BASE_URL}${currentUrl}` : null;
+                const previewUrl = currentUrl
+                    ? (currentUrl.startsWith("http")
+                        ? currentUrl
+                        : `${BASE_URL}${currentUrl}`)
+                    : null;
 
                 return (
                     <div className="dynamic-form__file">

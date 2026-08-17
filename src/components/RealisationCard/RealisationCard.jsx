@@ -14,8 +14,14 @@ const PLACEHOLDER_IMG = `data:image/svg+xml,${encodeURIComponent(`
 </svg>
 `)}`;
 function RealisationCard({ realisation, onView, onEdit, onDelete }) {
+    // const imageUrl = realisation.photo
+    //     ? `${BASE_URL}${realisation.photo}`
+    //     : PLACEHOLDER_IMG;
+
     const imageUrl = realisation.photo
-        ? `${BASE_URL}${realisation.photo}`
+        ? (realisation.photo.startsWith("http")
+            ? realisation.photo
+            : `${BASE_URL}${realisation.photo}`)
         : PLACEHOLDER_IMG;
 
     const handleEditClick = (e) => {
