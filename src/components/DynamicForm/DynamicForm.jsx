@@ -89,6 +89,22 @@ function DynamicForm({ fields, initialValues = {}, onSubmit, loading = false, su
         }
     };
 
+    // const handleFileChange = async (field, file) => {
+    //     if (!file) return;
+
+    //     setUploadingFields((prev) => ({ ...prev, [field.name]: true }));
+    //     setUploadErrors((prev) => ({ ...prev, [field.name]: null }));
+
+    //     try {
+    //         const result = await uploadFile(file);
+    //         handleChange(field, result.url); // on stocke l'URL renvoyée par le backend
+    //     } catch (err) {
+    //         setUploadErrors((prev) => ({ ...prev, [field.name]: "Échec de l'upload." }));
+    //     } finally {
+    //         setUploadingFields((prev) => ({ ...prev, [field.name]: false }));
+    //     }
+    // };
+    
     const handleFileChange = async (field, file) => {
         if (!file) return;
 
@@ -97,7 +113,21 @@ function DynamicForm({ fields, initialValues = {}, onSubmit, loading = false, su
 
         try {
             const result = await uploadFile(file);
-            handleChange(field, result.url); // on stocke l'URL renvoyée par le backend
+
+            // Stocke l'URL sur le champ lui-même (comportement inchangé),
+            // + les métadonnées Cloudinary sur des clés compagnes dérivées
+            // du nom du champ (ex: "photo" -> "photoWidth", "photoHeight", "photoColor")
+            setValues((prev) => ({
+                ...prev,
+                [field.name]: result.url,
+                [`${field.name}Width`]: result.width ?? null,
+                [`${field.name}Height`]: result.height ?? null,
+                [`${field.name}Color`]: result.color ?? null,
+            }));
+
+            if (errors[field.name]) {
+                setErrors((prev) => ({ ...prev, [field.name]: null }));
+            }
         } catch (err) {
             setUploadErrors((prev) => ({ ...prev, [field.name]: "Échec de l'upload." }));
         } finally {

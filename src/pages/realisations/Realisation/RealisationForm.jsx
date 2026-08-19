@@ -118,6 +118,10 @@ function RealisationForm({ realisation, onSuccess, onCancel }) {
               latitude: realisation.latitude || "",
               longitude: realisation.longitude || "",
               photo: realisation.photo || "",
+
+              photoWidth: realisation.photoWidth || null,   
+              photoHeight: realisation.photoHeight || null, 
+              photoColor: realisation.photoColor || "",     
           }
         : {};
 
@@ -140,6 +144,10 @@ function RealisationForm({ realisation, onSuccess, onCancel }) {
             latitude: values.latitude ? Number(values.latitude) : null,
             longitude: values.longitude ? Number(values.longitude) : null,
             photo: values.photo || null,
+
+            photoWidth: values.photoWidth || null,   
+            photoHeight: values.photoHeight || null, 
+            photoColor: values.photoColor || null,   
         };
 
         try {

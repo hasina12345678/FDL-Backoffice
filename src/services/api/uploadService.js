@@ -19,5 +19,5 @@ export async function uploadFile(file) {
         throw new Error("Erreur lors de l'upload du fichier.");
     }
 
-    return res.json(); // { filename, url }
+    return res.json(); // { url, width, height, color }
 }
