@@ -6,9 +6,9 @@ import Login from "./pages/Login/Login";
 import MainLayout from "./layouts/MainLayout";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
-import Auteur from "./pages/actualites/Auteur";
-import CategorieActualite from "./pages/actualites/CategorieActualite";
-import Actualite from "./pages/actualites/Actualite";
+import Auteur from "./pages/actualites/Auteur/Auteur";
+import CategorieActualite from "./pages/actualites/CategorieActualite/CategorieActualite";
+import Actualite from "./pages/actualites/actualite/Actualite";
 
 import Region from "./pages/realisations/Region/Region";
 import District from "./pages/realisations/District/District";
@@ -27,6 +27,7 @@ function App() {
 
                 <Route element={<ProtectedRoute />}>
                     <Route element={<MainLayout />}>
+                    
                         <Route path="/auteurs" element={<Auteur />} />
                         <Route path="/categories-actualites" element={<CategorieActualite />} />
                         <Route path="/actualites" element={<Actualite />} />

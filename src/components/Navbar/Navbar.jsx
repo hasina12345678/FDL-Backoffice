@@ -8,8 +8,9 @@ import "./Navbar.css";
 
 function Navbar() {
     const [openMenus, setOpenMenus] = useState({
-        actualites: true,
-        realisations: true,
+        actualites: false,
+        realisations: false,
+        rapport: false,
     });
 
     const toggleMenu = (menu) => {
@@ -22,7 +23,7 @@ function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar__logo">
-                <NavLink to="/accueil" className="navbar__logo-link">
+                <NavLink className="navbar__logo-link">
                     <img src={fdl_logo} alt="FDL" className="navbar__logo-img navbar__logo-fdl"/>
                 </NavLink>
             </div>
@@ -71,6 +72,25 @@ function Navbar() {
                         </ul>
                     )}
                 </li>
+
+                {/* Rapport */}
+                <li className={`navbar__item dropdown ${openMenus.rapport ? "open" : ""}`}>
+                    <button
+                        className="navbar__link"
+                        onClick={() => toggleMenu("rapport")}
+                        aria-expanded={openMenus.rapport}
+                    >
+                        Rapport
+                    </button>
+                    {openMenus.rapport && (
+                        <ul className="dropdown__menu">
+                            <li><NavLink to="/financier">Financier</NavLink></li>
+                            <li><NavLink to="/rc">RC</NavLink></li>
+                            {/* <li><NavLink to="/actualites">Actualités</NavLink></li> */}
+                        </ul>
+                    )}
+                </li>
+
             </ul>
 
             <div className="navbar__footer">

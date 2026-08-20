@@ -1,0 +1,102 @@
+/* components/ActualiteForm/DetailBlock.css */
+
+.detail-block {
+    padding: 1rem;
+    background: var(--surface-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.detail-block:first-of-type {
+    margin-top: 4px;
+}
+
+.detail-block__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.detail-block__badge {
+    padding: 4px 12px;
+    background: rgba(78, 166, 142, 0.08);
+    color: var(--primary);
+    border-radius: 999px;
+    font-family: 'Proxima-SemiBold', sans-serif;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.detail-block__remove {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #B23A3A;
+    font-family: 'Proxima-SemiBold', sans-serif;
+    font-size: 0.78rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.detail-block__remove:hover {
+    background: rgba(220, 90, 90, 0.08);
+}
+
+.detail-block__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.detail-block__field label {
+    font-family: 'Proxima-SemiBold', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text);
+}
+
+.detail-block__field input,
+.detail-block__field textarea {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-family: 'Proxima-Regular', sans-serif;
+    font-size: 0.88rem;
+}
+
+.detail-block__field input:focus,
+.detail-block__field textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(78, 166, 142, 0.12);
+}
+
+.detail-block__media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding-top: 6px;
+    border-top: 1px dashed var(--border);
+}
+
+.detail-block__icon {
+    width: 14px;
+    height: 14px;
+}
+
+@media (max-width: 720px) {
+    .detail-block__media-grid {
+        grid-template-columns: 1fr;
+    }
+}

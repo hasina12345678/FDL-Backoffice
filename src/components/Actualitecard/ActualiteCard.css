@@ -1,0 +1,177 @@
+/* components/ActualiteCard/ActualiteCard.css */
+
+.actualite-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.actualite-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-dropdown);
+}
+
+.actualite-card__image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    background-color: var(--surface-secondary);
+}
+
+.actualite-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.actualite-card__badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    font-family: "Proxima-SemiBold", sans-serif;
+    font-size: 0.72rem;
+    font-weight: var(--font-semibold);
+    color: var(--white);
+    background-color: var(--primary);
+    border-radius: 20px;
+}
+
+.actualite-card__badge--warning {
+    background-color: var(--primary);
+}
+
+.actualite-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem 1.1rem 1.1rem;
+}
+
+.actualite-card__meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+}
+
+.actualite-card__location {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+}
+
+.actualite-card__title {
+    margin: 0;
+    color: var(--text);
+    font-family: "Proxima-SemiBold", sans-serif;
+    font-size: 1rem;
+    font-weight: var(--font-semibold);
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.actualite-card__summary {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.actualite-card__meta svg {
+    flex-shrink: 0;
+    color: var(--text-light);
+}
+
+.actualite-card__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 2px;
+}
+
+.actualite-card__category-chip {
+    padding: 3px 9px;
+    background: rgba(78, 166, 142, 0.08);
+    color: var(--primary);
+    border-radius: 999px;
+    font-family: 'Proxima-SemiBold', sans-serif;
+    font-size: 0.68rem;
+}
+
+.actualite-card__category-chip--more {
+    background: var(--surface-secondary);
+    color: var(--text-secondary);
+}
+
+.actualite-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 0.4rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+}
+
+.actualite-card__auteur {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.actualite-card__actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.actualite-card__btn {
+    flex: 1;
+    padding: 0.45rem 0.6rem;
+    font-family: "Proxima-Regular", sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    background-color: var(--surface-secondary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.actualite-card__btn:hover {
+    background-color: var(--dropdown-hover);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.actualite-card__btn--delete:hover {
+    background-color: rgba(220, 38, 38, 0.08);
+    color: #DC2626;
+}
+
+.actualite-card__btn:focus-visible,
+.actualite-page__add-btn:focus-visible,
+.actualite-filters__reset:focus-visible {
+    outline: 3px solid rgba(78, 166, 142, 0.25);
+    outline-offset: 2px;
+}
