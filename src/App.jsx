@@ -8,7 +8,7 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 import Auteur from "./pages/actualites/Auteur/Auteur";
 import CategorieActualite from "./pages/actualites/CategorieActualite/CategorieActualite";
-import Actualite from "./pages/actualites/actualite/Actualite";
+import Actualite from "./pages/actualites/Actualite/Actualite";
 
 import Region from "./pages/realisations/Region/Region";
 import District from "./pages/realisations/District/District";
