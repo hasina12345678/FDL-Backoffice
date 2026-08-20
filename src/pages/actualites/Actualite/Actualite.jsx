@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import ActualiteForm from "./ActualiteForm";
-import ActualiteCard from "../../../components/ActualiteCard/ActualiteCard";
+import ActualiteCard from "../../../components/ActualiteCard/ActualiteCard"; //
 import Modal from "../../../components/Modal/Modal";
 import createCrudService from "../../../services/api/genericService";
 
